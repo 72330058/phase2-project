@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import "../assets/styles/adminFeedback.css";
 import AdminSidebar from "../components/AdminSidebar";
-
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -34,7 +33,7 @@ const Stars = ({ value }) => {
   );
 };
 
-export default function AdminFeedback() {
+const AdminFeedback = () => {
   const [rows, setRows] = useState([]);
   const [stats, setStats] = useState({
     totalFeedback: 0,
@@ -76,6 +75,7 @@ export default function AdminFeedback() {
     const onDocClick = () => setOpenMenuId(null);
     document.addEventListener("click", onDocClick);
     return () => document.removeEventListener("click", onDocClick);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filtered = useMemo(() => {
@@ -141,7 +141,9 @@ export default function AdminFeedback() {
 
           <div className="af-statCard">
             <div className="af-statTitle">Average Rating</div>
-            <div className="af-statValue">{Number(stats.avgRating || 0).toFixed(1)}</div>
+            <div className="af-statValue">
+              {Number(stats.avgRating || 0).toFixed(1)}
+            </div>
             <div className="af-statStars">
               <Stars value={stats.avgRating} />
             </div>
@@ -198,7 +200,9 @@ export default function AdminFeedback() {
 
                     return (
                       <tr key={r.id} className="af-tr">
-                        <td className="af-td col-user">{r.user_name || "Anonymous"}</td>
+                        <td className="af-td col-user">
+                          {r.user_name || "Anonymous"}
+                        </td>
                         <td className="af-td col-course">{r.course_name}</td>
 
                         <td className="af-td col-rating">
@@ -215,7 +219,9 @@ export default function AdminFeedback() {
                           </span>
                         </td>
 
-                        <td className="af-td col-date">{formatDate(r.created_at)}</td>
+                        <td className="af-td col-date">
+                          {formatDate(r.created_at)}
+                        </td>
 
                         <td className="af-td af-tdRight col-actions">
                           <div
@@ -292,4 +298,6 @@ export default function AdminFeedback() {
       </main>
     </div>
   );
-}
+};
+
+export default AdminFeedback;

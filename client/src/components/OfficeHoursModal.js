@@ -1,15 +1,16 @@
 import React from "react";
 import "../assets/styles/officeHoursModal.css";
 
-export default function OfficeHoursModal({
+const OfficeHoursModal = ({
   open,
   onClose,
   onConfirm,
   title = "Success!",
   message = "You can visit our company during the following hours:",
   buttonText = "Got it, Thanks!",
-}) {
+}) => {
   if (!open) return null;
+
   const handleConfirm = () => {
     onClose();
     if (onConfirm) setTimeout(() => onConfirm(), 0);
@@ -51,4 +52,6 @@ export default function OfficeHoursModal({
       </div>
     </div>
   );
-}
+};
+
+export default OfficeHoursModal;

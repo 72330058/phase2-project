@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import axios from "axios";
 import AdminSidebar from "../components/AdminSidebar";
 import "../assets/styles/adminPopularCourses.css";
-
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
@@ -12,7 +11,7 @@ const MAX_POPULAR = 6;
 const imgUrl = (thumb) =>
   thumb ? `${API}/uploads/${thumb}` : "/images/course-placeholder.jpg";
 
-export default function AdminPopularCourses() {
+const AdminPopularCourses = () => {
   const [allCourses, setAllCourses] = useState([]);
   const [popularCourses, setPopularCourses] = useState([]);
   const [stats, setStats] = useState({
@@ -275,13 +274,18 @@ export default function AdminPopularCourses() {
                       </td>
 
                       <td style={{ textAlign: "right" }}>
-                        <div className="ap-actions" ref={openMenuId === p.popular_id ? menuRef : null}>
+                        <div
+                          className="ap-actions"
+                          ref={openMenuId === p.popular_id ? menuRef : null}
+                        >
                           <button
                             className="ap-kebabBtn"
                             title="Actions"
                             onClick={(e) => {
                               e.stopPropagation();
-                              setOpenMenuId((cur) => (cur === p.popular_id ? null : p.popular_id));
+                              setOpenMenuId((cur) =>
+                                cur === p.popular_id ? null : p.popular_id
+                              );
                             }}
                           >
                             <MoreVertIcon fontSize="small" />
@@ -313,4 +317,6 @@ export default function AdminPopularCourses() {
       </main>
     </div>
   );
-}
+};
+
+export default AdminPopularCourses;

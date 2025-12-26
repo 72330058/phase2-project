@@ -8,7 +8,6 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CloseIcon from "@mui/icons-material/Close";
 
-
 const roleLabel = (role) => {
   const r = String(role || "user").toLowerCase();
   if (r === "admin") return "Admin";
@@ -23,7 +22,7 @@ const formatDate = (d) => {
   return dt.toISOString().slice(0, 10);
 };
 
-export default function AdminUsers() {
+const AdminUsers = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [q, setQ] = useState("");
@@ -90,12 +89,15 @@ export default function AdminUsers() {
 
     try {
       if (editingUser) {
-        await axios.put(`http://localhost:5000/api/admin/users/${editingUser.id}`, {
-          name: form.name,
-          email: form.email,
-          role: form.role,
-          password: form.password,
-        });
+        await axios.put(
+          `http://localhost:5000/api/admin/users/${editingUser.id}`,
+          {
+            name: form.name,
+            email: form.email,
+            role: form.role,
+            password: form.password,
+          }
+        );
       } else {
         await axios.post("http://localhost:5000/api/admin/users", {
           name: form.name,
@@ -233,20 +235,17 @@ export default function AdminUsers() {
           </div>
         </div>
 
-
         {modalOpen && (
           <div className="au-modalOverlay" onClick={closeModal}>
             <div className="au-modal" onClick={(e) => e.stopPropagation()}>
               <div className="au-modalHeader">
-                <div className="au-modalTitle">
-                </div>
-                <button className="au-closeBtn" onClick={closeModal}>
+                <div className="au-modalTitle"></div>
+                <button className="au-closeBtn" onClick={closeModal} type="button">
                   <CloseIcon fontSize="small" />
                 </button>
               </div>
 
               <form className="au-form" onSubmit={submit}>
-
                 <label className="au-label">Role</label>
                 <select
                   className="au-input"
@@ -277,4 +276,6 @@ export default function AdminUsers() {
       </main>
     </div>
   );
-}
+};
+
+export default AdminUsers;

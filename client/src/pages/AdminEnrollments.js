@@ -6,7 +6,7 @@ import AdminSidebar from "../components/AdminSidebar";
 
 const API = "http://localhost:5000";
 
-export default function AdminEnrollments() {
+const AdminEnrollments = () => {
   const [stats, setStats] = useState({ total: 0, freeCount: 0, paidCount: 0 });
   const [rows, setRows] = useState([]);
   const [search, setSearch] = useState("");
@@ -23,6 +23,7 @@ export default function AdminEnrollments() {
         setOpenMenuId(null);
       }
     };
+
     document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, []);
@@ -70,13 +71,17 @@ export default function AdminEnrollments() {
             <div className="ad-card ad-cardPad enr-card">
               <span className="enr-label">Free Enrollments</span>
               <h3 className="enr-value">{stats.freeCount}</h3>
-              <small className="enr-small">{pct(stats.freeCount, stats.total)}% of total</small>
+              <small className="enr-small">
+                {pct(stats.freeCount, stats.total)}% of total
+              </small>
             </div>
 
             <div className="ad-card ad-cardPad enr-card">
               <span className="enr-label">Paid Enrollments</span>
               <h3 className="enr-value">{stats.paidCount}</h3>
-              <small className="enr-small">{pct(stats.paidCount, stats.total)}% of total</small>
+              <small className="enr-small">
+                {pct(stats.paidCount, stats.total)}% of total
+              </small>
             </div>
           </div>
 
@@ -125,7 +130,9 @@ export default function AdminEnrollments() {
                           className="dots-btn"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setOpenMenuId(openMenuId === r.id ? null : r.id);
+                            setOpenMenuId(
+                              openMenuId === r.id ? null : r.id
+                            );
                           }}
                           aria-label="Actions"
                         >
@@ -153,4 +160,6 @@ export default function AdminEnrollments() {
       </div>
     </div>
   );
-}
+};
+
+export default AdminEnrollments;

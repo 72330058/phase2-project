@@ -17,7 +17,7 @@ const emptyCourse = {
   thumbnail: null,
 };
 
-export default function AdminCourses() {
+const AdminCourses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -263,7 +263,10 @@ export default function AdminCourses() {
               />
 
               <div className="modal-actions">
-                <button className="cancel" onClick={() => setShowModal(false)}>
+                <button
+                  className="cancel"
+                  onClick={() => setShowModal(false)}
+                >
                   Cancel
                 </button>
                 <button className="save" onClick={handleSave}>
@@ -276,4 +279,6 @@ export default function AdminCourses() {
       </main>
     </div>
   );
-}
+};
+
+export default AdminCourses;

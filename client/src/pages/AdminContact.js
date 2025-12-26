@@ -18,15 +18,15 @@ const formatDate = (d) => {
 const normStatus = (s) => {
   const v = String(s || "new").toLowerCase().trim();
   if (v === "in progress") return "in_progress";
-  return v; 
+  return v;
 };
 
 const normPriority = (p) => {
   const v = String(p || "medium").toLowerCase().trim();
-  return v; 
+  return v;
 };
 
-export default function AdminContact() {
+const AdminContact = () => {
   const [rows, setRows] = useState([]);
   const [stats, setStats] = useState({
     total: 0,
@@ -48,12 +48,14 @@ export default function AdminContact() {
       ]);
 
       setRows(rowsRes.data || []);
-      setStats(statsRes.data || {
-        total: 0,
-        newCount: 0,
-        inProgressCount: 0,
-        resolvedCount: 0,
-      });
+      setStats(
+        statsRes.data || {
+          total: 0,
+          newCount: 0,
+          inProgressCount: 0,
+          resolvedCount: 0,
+        }
+      );
     } catch (e) {
       setRows([]);
       setStats({
@@ -109,7 +111,9 @@ export default function AdminContact() {
 
       setRows((prev) =>
         prev.map((r) =>
-          r.id === id ? { ...r, status: payload.status, priority: payload.priority } : r
+          r.id === id
+            ? { ...r, status: payload.status, priority: payload.priority }
+            : r
         )
       );
 
@@ -246,13 +250,20 @@ export default function AdminContact() {
                           </select>
                         </td>
 
-                        <td className="ac-td col-date">{formatDate(r.created_at)}</td>
+                        <td className="ac-td col-date">
+                          {formatDate(r.created_at)}
+                        </td>
 
                         <td className="ac-td ac-tdRight col-actions">
-                          <div className="ac-actions" onClick={(e) => e.stopPropagation()}>
+                          <div
+                            className="ac-actions"
+                            onClick={(e) => e.stopPropagation()}
+                          >
                             <button
                               className="ac-moreBtn"
-                              onClick={() => setOpenMenuId(openMenuId === r.id ? null : r.id)}
+                              onClick={() =>
+                                setOpenMenuId(openMenuId === r.id ? null : r.id)
+                              }
                             >
                               <MoreVertIcon fontSize="small" />
                             </button>
@@ -292,4 +303,6 @@ export default function AdminContact() {
       </main>
     </div>
   );
-}
+};
+
+export default AdminContact;

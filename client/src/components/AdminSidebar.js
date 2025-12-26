@@ -10,7 +10,7 @@ import RateReviewOutlinedIcon from "@mui/icons-material/RateReviewOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
 
-export default function AdminSidebar() {
+const AdminSidebar = () => {
   return (
     <aside className="ad-sidebar">
       <div className="ad-brand">LMS Admin</div>
@@ -97,4 +97,6 @@ export default function AdminSidebar() {
       </div>
     </aside>
   );
-}
+};
+
+export default AdminSidebar;
