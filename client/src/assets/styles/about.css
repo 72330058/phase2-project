@@ -1,0 +1,286 @@
+/* ========= TOP ABOUT HERO (Main Section) ========== */
+
+.about-hero {
+  padding: 7rem 1.5rem 4rem; /* space from navbar */
+  max-width: 1120px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Card wrapper: Image + Text */
+.about-hero-inner {
+  width: 100%; /* 🔥 Required for responsiveness */
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+
+  border: 1px solid #d1d5db; /* thin grey border */
+  border-radius: 16px;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+/* Left image */
+.about-image-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right content */
+.about-content {
+  color: #111827;
+}
+
+/* ABOUT US label */
+.about-label {
+  color: #0066ff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Main Heading */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0b0a35;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+/* Paragraph Text */
+.about-paragraph {
+  color: #555;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+}
+
+/* Features Grid */
+.about-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 2.5rem;
+  margin: 1.2rem 0 1.8rem;
+}
+
+.about-feature-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Blue arrow icon */
+.about-feature-icon {
+  color: #0066ff !important;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.about-feature-item:hover .about-feature-icon {
+  transform: translateX(4px);
+}
+
+/* Read More button */
+.about-readmore-btn {
+  background: #0066ff;
+  color: white;
+  padding: 0.8rem 2.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 11, 212, 0.368);
+}
+
+.about-readmore-btn:hover {
+  background: #3355ff;
+}
+
+
+/* ========= ABOUT CENTER (Stats) ========== */
+
+.about-center {
+  padding: 4rem 2rem 4rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-title.big {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0b0a35;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-text {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Stats boxes row */
+.about-stats.centered {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  margin-top: 1rem;
+}
+
+/* Individual stat box */
+.stat {
+  flex: 1;
+  max-width: 220px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.stat p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Stat colors */
+.blue1 { background: #0d47a1; }
+.blue2 { background: #1565c0; }
+.blue3 { background: #1e88e5; }
+.blue4 { background: #42a5f5; }
+
+
+/* ========= RESPONSIVE FIXES ========== */
+
+@media (max-width: 900px) {
+  .about-hero-inner {
+    grid-template-columns: 1fr; /* stack image + text */
+    padding: 1.5rem; /* reduce spacing */
+    gap: 2rem;
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .about-heading {
+    font-size: 2.1rem;
+  }
+
+  .about-features-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .about-stats.centered {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .stat {
+    max-width: 100%;
+    height: 90px;
+  }
+
+  .about-title.big {
+    font-size: 2.4rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-heading {
+    font-size: 1.9rem;
+  }
+
+  .about-title.big {
+    font-size: 2rem;
+  }
+}
+
+/* Animation for showing AboutCenter */
+#about-center-wrapper {
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ABOUT US with lines */
+.about-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.about-label-text {
+  color: #0066ff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* thin blue lines */
+.about-label-line {
+  width: 28px;
+  height: 2px;
+  background: #0066ff; 
+  border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+  .about-label-line {
+    width: 20px;
+  }
+}
+
