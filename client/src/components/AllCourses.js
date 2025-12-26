@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import "../assets/styles/allcourses.css";
 import TrialPlansModal from "../components/TrialPlansModal";
 import SubscriptionModal from "../components/SubscriptionModal";
-
-/* fallback image */
 import placeholder from "../assets/images/web.jpg";
 
 const API = "http://localhost:5000";

@@ -1,4 +1,4 @@
-/* Header layout: Browse Courses + Give Feedback */
+
 .courses-header {
   display: flex;
   align-items: center;
@@ -6,7 +6,6 @@
   gap: 20px;
 }
 
-/* Feedback button */
 .feedback-btn {
   padding: 10px 18px;
   background: #2563eb;
@@ -24,7 +23,7 @@
   background: #1d4ed8;
 }
 
-/* Responsive: stack on small screens */
+
 @media (max-width: 768px) {
   .courses-header {
     flex-direction: column;
@@ -36,8 +35,6 @@
   }
 }
 
-
-/* Outline pill button – same as "View All Courses" */
 .outline-btn {
   padding: 10px 22px;
   border: 1.5px solid #d1d5db;
@@ -51,15 +48,11 @@
   white-space: nowrap;
 }
 
-/* Hover effect */
 .outline-btn:hover {
   background: #f9fafb;
   border-color: #9ca3af;
 }
 
-
-
-/* Outline pill button – same as View All Courses */
 .outline-btn {
   padding: 10px 22px;
   border: 1.5px solid #d1d5db;
@@ -73,8 +66,7 @@
   white-space: nowrap;
 }
 
-/* ✅ Light grey on hover */
 .outline-btn:hover {
-  background-color: #f3f4f6; /* light grey */
+  background-color: #f3f4f6; 
   border-color: #9ca3af;
 }

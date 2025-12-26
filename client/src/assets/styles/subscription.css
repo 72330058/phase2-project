@@ -63,7 +63,6 @@
   line-height: 1.5;
 }
 
-/* Boxes */
 .trial-box {
   width: 100%;
   border-radius: 10px;
@@ -95,7 +94,6 @@
   font-size: 12.5px;
 }
 
-/* Warning */
 .trial-box-yellow {
   background: #fff7ed;
   border: 1px solid #fed7aa;

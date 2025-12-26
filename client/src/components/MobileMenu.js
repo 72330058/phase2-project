@@ -48,7 +48,6 @@ const MobileMenu = ({ user, onClose }) => {
           <Link to="/features" onClick={onClose}>Features</Link>
           <Link to="/contact" onClick={onClose}>Contact</Link>
 
-          {/* ✅ only after login */}
           {user && (
             <Link to="/my-enrollments" onClick={onClose}>
               My Enrollments
@@ -57,7 +56,6 @@ const MobileMenu = ({ user, onClose }) => {
         </nav>
 
         <div className="mobile-menu-actions">
-          {/* ❌ Not logged in */}
           {!user && (
             <>
               <button className="btn btn-ghost full-width" onClick={handleLogin}>
@@ -69,7 +67,6 @@ const MobileMenu = ({ user, onClose }) => {
             </>
           )}
 
-          {/* ✅ Logged in */}
           {user && (
             <button className="btn btn-ghost full-width" onClick={handleLogout}>
               Logout

@@ -9,7 +9,6 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* Sidebar */
 .admin-sidebar {
   width: 240px;
   background: linear-gradient(180deg, #020617, #020617);
@@ -37,7 +36,6 @@
   color: #fff;
 }
 
-/* Main */
 .admin-main {
   flex: 1;
   padding: 30px;
@@ -48,7 +46,6 @@
   margin-bottom: 30px;
 }
 
-/* Stats Cards */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -76,7 +73,6 @@
   font-size: 26px;
 }
 
-/* Icons */
 .icon {
   width: 44px;
   height: 44px;
@@ -92,7 +88,6 @@
 .icon.green { background: #dcfce7; color: #16a34a; }
 .icon.teal { background: #cffafe; color: #0891b2; }
 
-/* Middle */
 .middle-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -100,7 +95,6 @@
   margin-bottom: 30px;
 }
 
-/* Cards */
 .card {
   background: #fff;
   padding: 20px;
@@ -112,7 +106,6 @@
   margin-bottom: 15px;
 }
 
-/* Progress */
 .progress-row {
   display: flex;
   justify-content: space-between;
@@ -136,7 +129,6 @@
   background: #2563eb;
 }
 
-/* Activity */
 .activity-row {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -158,7 +150,6 @@
   border-radius: 999px;
 }
 
-/* Loading */
 .admin-loading {
   padding: 60px;
   font-size: 18px;

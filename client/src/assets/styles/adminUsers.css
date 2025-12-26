@@ -13,7 +13,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 
 .admin-loading{ padding:50px; text-align:center; font-size:16px; color:var(--muted); }
 
-/* reuse dashboard shell layout */
 .ad-shell{ display:flex; min-height:100vh; }
 
 .ad-sidebar{
@@ -59,7 +58,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   max-width:1200px;
 }
 
-/* top */
 .au-topbar{
   display:flex;
   align-items:flex-start;
@@ -84,7 +82,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 }
 .au-addBtn:hover{ filter:brightness(.95); }
 
-/* card */
 .au-card{
   margin-top:16px;
   background:var(--card);
@@ -118,7 +115,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   font-size:13px;
 }
 
-/* table */
 .au-tableWrap{ padding:12px 16px 16px; }
 
 .au-table{
@@ -151,7 +147,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   color:var(--muted);
 }
 
-/* status pill */
 .au-status{
   font-size:11px;
   font-weight:900;
@@ -164,7 +159,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   color:#0f766e;
 }
 
-/* actions */
 .au-actions{ position:relative; display:inline-block; }
 
 .au-moreBtn{
@@ -206,7 +200,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 .au-menuItem.danger{ color:#b42318; }
 .au-menuItem.danger:hover{ background:#fff1f0; }
 
-/* modal */
 .au-modalOverlay{
   position:fixed;
   inset:0;
@@ -292,7 +285,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 }
 .au-btnPrimary:hover{ filter:brightness(.95); }
 
-/* responsive */
 @media (max-width:720px){
   .ad-shell{ flex-direction:column; }
   .ad-sidebar{

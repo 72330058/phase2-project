@@ -20,7 +20,6 @@ import AdminEnrollments from "../pages/AdminEnrollments";
 import AdminFeedback from "../pages/AdminFeedback";
 import AdminPopularCourses from "../pages/AdminPopularCourses";
 
-/* ================= ADMIN ROUTE PROTECTION ================= */
 const AdminRoute = ({ children }) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -37,7 +36,7 @@ const AppRoutes = () => {
       <ScrollToTop />
 
       <Routes>
-        {/* Public routes */}
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
@@ -47,12 +46,11 @@ const AppRoutes = () => {
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/feedback" element={<Feedback />} />
 
-        {/* User routes */}
         <Route path="/enroll" element={<CourseEnroll />} />
         <Route path="/checkout" element={<CourseCheckout />} />
         <Route path="/my-enrollments" element={<MyEnrollments />} />
 
-        {/* Admin route */}
+
         <Route
           path="/admin/dashboard"
           element={

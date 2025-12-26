@@ -190,7 +190,6 @@ export default function AdminCourses() {
           )}
         </div>
 
-        {/* ===== MODAL (FIXED & WORKING) ===== */}
         {showModal && (
           <div className="modal-overlay" onClick={() => setShowModal(false)}>
             <div className="modal" onClick={(e) => e.stopPropagation()}>

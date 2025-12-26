@@ -8,7 +8,6 @@
 
 .ad-shell{ display:flex; min-height:100vh; }
 
-/* Sidebar */
 .ad-sidebar{
   width:240px;
   background:#fff;
@@ -54,7 +53,6 @@
   align-items:center;
 }
 
-/* Responsive */
 @media (max-width:720px){
   .ad-shell{ flex-direction:column; }
   .ad-sidebar{
@@ -64,7 +62,6 @@
   }
 }
 
-/* ===== VIEW WEBSITE BUTTON ===== */
 .ad-viewSite{
   margin-top: auto;
   padding-top: 12px;

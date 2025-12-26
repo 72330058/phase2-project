@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../assets/styles/enroll.css";
-
 import EnrollmentSuccessModal from "../components/EnrollmentSuccessModal";
 
 const CourseEnroll = () => {

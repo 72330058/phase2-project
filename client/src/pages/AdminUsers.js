@@ -233,7 +233,7 @@ export default function AdminUsers() {
           </div>
         </div>
 
-        {/* Modal */}
+
         {modalOpen && (
           <div className="au-modalOverlay" onClick={closeModal}>
             <div className="au-modal" onClick={(e) => e.stopPropagation()}>

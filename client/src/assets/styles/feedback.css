@@ -1,4 +1,4 @@
-/* ===== Page background & hero ===== */
+
 .fb-page {
   min-height: calc(100vh - 140px);
   padding: 120px 16px 60px;
@@ -21,7 +21,6 @@
   font-size: 0.95rem;
 }
 
-/* ===== Form card ===== */
 .fb-card {
   max-width: 640px;
   margin: 0 auto;
@@ -75,7 +74,6 @@
   resize: vertical;
 }
 
-/* ===== Stars ===== */
 .fb-stars {
   display: flex;
   gap: 8px;
@@ -96,7 +94,6 @@
   color: #f59e0b;
 }
 
-/* ===== Submit button ===== */
 .fb-submit {
   width: 100%;
   margin-top: 14px;
@@ -113,7 +110,6 @@
   background: #4b5563;
 }
 
-/* ===== Modal (Thank you) ===== */
 .fb-modal-overlay {
   position: fixed;
   inset: 0;

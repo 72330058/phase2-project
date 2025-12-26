@@ -19,7 +19,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   max-width:1200px;
 }
 
-/* top */
 .ac-topbar{
   display:flex;
   align-items:flex-start;
@@ -30,7 +29,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 .ac-title{ margin:0; font-size:28px; letter-spacing:-.4px; }
 .ac-subtitle{ margin:6px 0 0; color:var(--muted); font-size:13px; }
 
-/* ✅ stats cards row */
 .ac-statsGrid{
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
@@ -60,12 +58,10 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   font-weight:900;
 }
 
-/* small colored numbers like screenshot */
 .ac-statValue.blue{ color:#175cd3; }
 .ac-statValue.orange{ color:#b45309; }
 .ac-statValue.green{ color:#067647; }
 
-/* card */
 .ac-card{
   margin-top:0;
   background:var(--card);
@@ -99,14 +95,12 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   font-size:13px;
 }
 
-/* wrap safety */
 .ac-tableWrap{
   padding:12px 16px 16px;
   overflow-x:auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* table */
 .ac-table{
   width:100%;
   min-width:980px;
@@ -140,7 +134,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   color:var(--muted);
 }
 
-/* subject pill */
 .ac-subject{
   display:inline-block;
   font-size:12px;
@@ -152,7 +145,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   border:1px solid #cfe3ff;
 }
 
-/* selects like screenshot */
 .ac-select{
   width:120px;
   border:1px solid var(--line);
@@ -165,7 +157,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   cursor:pointer;
 }
 
-/* actions */
 .ac-actions{ position:relative; display:inline-block; }
 
 .ac-moreBtn{
@@ -207,7 +198,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 .ac-menuItem.danger{ color:#b42318; }
 .ac-menuItem.danger:hover{ background:#fff1f0; }
 
-/* responsive */
 @media (max-width:1050px){
   .ac-statsGrid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
 }
@@ -219,12 +209,10 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   .ac-table{ min-width:0; }
 }
 
-/* hide columns on small screens */
 @media (max-width:600px){
   .col-email{ display:none; }
 }
 
-/* ✅ stats cards */
 .ac-statsGrid{
   display:grid;
   grid-template-columns:repeat(4, minmax(0, 1fr));

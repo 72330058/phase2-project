@@ -1,14 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./db");
-
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-
 const app = express();
 
-/* ================= MIDDLEWARE ================= */
 app.use(
   cors({
     origin: "*",
@@ -18,7 +15,6 @@ app.use(
 );
 app.use(express.json());
 
-/* ================= UPLOADS SETUP (IMPORTANT) ================= */
 const uploadsDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
@@ -32,10 +28,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// serve uploaded images
 app.use("/uploads", express.static(uploadsDir));
 
-/* ================= REGISTER ================= */
+// Register
 app.post("/api/register", (req, res) => {
   const { name, email, password } = req.body;
 
@@ -50,7 +45,7 @@ app.post("/api/register", (req, res) => {
   });
 });
 
-/* ================= LOGIN ================= */
+//Login
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
@@ -67,7 +62,7 @@ app.post("/api/login", (req, res) => {
   });
 });
 
-/* ================= GET ALL USERS ================= */
+// GET ALL USERS
 app.get("/users", (req, res) => {
   db.query("SELECT id, name, email FROM users", (err, result) => {
     if (err) return res.status(500).json({ message: "Database error" });
@@ -75,7 +70,7 @@ app.get("/users", (req, res) => {
   });
 });
 
-/* ================= CONTACT (PUBLIC) ================= */
+// CONTACT (PUBLIC) 
 app.post("/api/contact", (req, res) => {
   const { first_name, last_name, email, subject, message } = req.body;
 
@@ -116,7 +111,7 @@ app.get("/contact", (req, res) => {
   });
 });
 
-/* ================= FEEDBACK ================= */
+// FEEDBACK
 app.post("/api/feedback", (req, res) => {
   const { course_name, rating, feedback_message } = req.body;
 
@@ -143,7 +138,7 @@ app.get("/feedback", (req, res) => {
   });
 });
 
-/* ================= ENROLLMENTS ================= */
+//ENROLLMENTS
 app.post("/api/enroll", (req, res) => {
   const { user_id, course_id, course_type } = req.body;
 
@@ -207,7 +202,7 @@ app.delete("/api/enroll/:id", (req, res) => {
   });
 });
 
-/* ================= ADMIN STATS ✅ UPDATED ================= */
+// ADMIN STATS 
 app.get("/api/admin/stats", (req, res) => {
   const stats = {};
 
@@ -236,7 +231,6 @@ app.get("/api/admin/stats", (req, res) => {
                 stats.avgRating = Number(r5[0].avgRating || 0).toFixed(1);
                 stats.totalFeedback = r5[0].totalFeedback;
 
-                // ✅ FIXED: recentActivity now joins courses
                 db.query(
                   `SELECT u.name, c.title AS course_name, e.course_type, e.enrolled_at
                    FROM enrollments e
@@ -265,7 +259,7 @@ app.get("/api/admin/stats", (req, res) => {
   });
 });
 
-/* ================= ADMIN COURSES ================= */
+//ADMIN COURSES
 app.get("/api/admin/courses", (req, res) => {
   const sql = `
     SELECT
@@ -372,7 +366,7 @@ app.delete("/api/admin/courses/:id", (req, res) => {
   });
 });
 
-/* ================= FRONTEND COURSES ================= */
+//FRONTEND COURSES 
 app.get("/api/courses", (req, res) => {
   const sql = `
     SELECT
@@ -399,7 +393,7 @@ app.get("/api/courses", (req, res) => {
   });
 });
 
-/* ================= ADMIN USERS APIs ================= */
+//ADMIN USERS APIs 
 app.get("/api/admin/users", (req, res) => {
   const sql = `SELECT id, name, email, role, created_at FROM users ORDER BY id DESC`;
   db.query(sql, (err, rows) => {
@@ -429,7 +423,7 @@ app.delete("/api/admin/users/:id", (req, res) => {
   });
 });
 
-/* ================= ADMIN CONTACT APIs ================= */
+//ADMIN CONTACT APIs
 app.get("/api/admin/contact/stats", (req, res) => {
   const sql = `
     SELECT
@@ -483,7 +477,7 @@ app.delete("/api/admin/contact/:id", (req, res) => {
   });
 });
 
-/* ================= ADMIN ENROLLMENTS ✅ FIXED ================= */
+// ADMIN ENROLLMENTS 
 app.get("/api/admin/enrollments", (req, res) => {
   const search = req.query.search || "";
   const q = `%${search}%`;
@@ -537,7 +531,7 @@ app.delete("/api/admin/enrollments/:id", (req, res) => {
   });
 });
 
-/* ================= ADMIN FEEDBACK APIs ================= */
+// ADMIN FEEDBACK APIs 
 app.get("/api/admin/feedback", (req, res) => {
   const sql = `
     SELECT
@@ -611,12 +605,6 @@ app.get("/api/admin/feedback/stats", (req, res) => {
     });
   });
 });
-// ==========================
-// POPULAR COURSES (PUBLIC)
-// ==========================
-// ==========================
-// POPULAR COURSES (HOME + ADMIN)
-// ==========================
 
 // PUBLIC (Home page)
 app.get("/api/popular-courses", (req, res) => {
@@ -718,9 +706,8 @@ app.delete("/api/admin/popular-courses/:popularId", (req, res) => {
     }
   );
 });
-// ==========================
+
 // POPULAR COURSES STATS (ADMIN)
-// ==========================
 app.get("/api/admin/popular-courses/stats", (req, res) => {
   const sql = `
     SELECT

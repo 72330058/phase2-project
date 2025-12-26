@@ -61,7 +61,6 @@ export default function AdminEnrollments() {
             </div>
           </div>
 
-          {/* STATS */}
           <div className="enr-cards">
             <div className="ad-card ad-cardPad enr-card">
               <span className="enr-label">Total Enrollments</span>
@@ -81,7 +80,6 @@ export default function AdminEnrollments() {
             </div>
           </div>
 
-          {/* SEARCH */}
           <div className="ad-card ad-cardPad enr-toolbar">
             <input
               className="enr-search"
@@ -95,7 +93,6 @@ export default function AdminEnrollments() {
             />
           </div>
 
-          {/* TABLE */}
           <div className="ad-card ad-cardPad ad-tableWrap">
             <table className="ad-table">
               <thead>

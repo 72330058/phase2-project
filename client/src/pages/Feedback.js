@@ -11,7 +11,7 @@ const Feedback = () => {
   const location = useLocation();
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const alertShown = useRef(false); // ✅ prevents double alert
+  const alertShown = useRef(false); 
 
   const [courseName, setCourseName] = useState(
     location.state?.courseName || ""
@@ -20,11 +20,9 @@ const Feedback = () => {
   const [hover, setHover] = useState(0);
   const [feedback, setFeedback] = useState("");
   const [successOpen, setSuccessOpen] = useState(false);
-
   const [canGiveFeedback, setCanGiveFeedback] = useState(false);
   const [checked, setChecked] = useState(false);
 
-  /* ================= CHECK ACCESS ================= */
   useEffect(() => {
     const showAlertOnce = () => {
       if (!alertShown.current) {
@@ -33,14 +31,12 @@ const Feedback = () => {
       }
     };
 
-    // ❌ Not logged in
     if (!user) {
       showAlertOnce();
       setChecked(true);
       return;
     }
 
-    // ✅ Logged in → check enrollments
     axios
       .get(`http://localhost:5000/api/enrollments/${user.id}`)
       .then((res) => {
@@ -58,7 +54,6 @@ const Feedback = () => {
       });
   }, [user]);
 
-  /* ================= SUBMIT FEEDBACK ================= */
   const handleSubmit = async (e) => {
     e.preventDefault();
 

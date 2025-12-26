@@ -19,10 +19,8 @@ const Login = () => {
         password,
       });
 
-      // Save user
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      // ✅ Redirect silently to home
       navigate("/");
     } catch (err) {
       alert("Invalid email or password");

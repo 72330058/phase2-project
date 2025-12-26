@@ -32,12 +32,10 @@ const Navbar = () => {
             <Link to="/features">Features</Link>
             <Link to="/contact">Contact</Link>
 
-            {/* User-only */}
             {user && user.role === "user" && (
               <Link to="/my-enrollments">My Enrollments</Link>
             )}
 
-            {/* Admin-only */}
             {user && user.role === "admin" && (
               <Link to="/admin/dashboard">Admin Panel</Link>
             )}

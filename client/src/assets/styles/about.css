@@ -1,28 +1,26 @@
-/* ========= TOP ABOUT HERO (Main Section) ========== */
+
 
 .about-hero {
-  padding: 7rem 1.5rem 4rem; /* space from navbar */
+  padding: 7rem 1.5rem 4rem; 
   max-width: 1120px;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
 }
 
-/* Card wrapper: Image + Text */
 .about-hero-inner {
-  width: 100%; /* 🔥 Required for responsiveness */
+  width: 100%; 
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 3rem;
   align-items: center;
 
-  border: 1px solid #d1d5db; /* thin grey border */
+  border: 1px solid #d1d5db; 
   border-radius: 16px;
   background: #fff;
   padding: 2rem;
   box-shadow: 0 4px 14px rgba(0,0,0,0.05);
 }
 
-/* Left image */
 .about-image-wrapper {
   border-radius: 10px;
   overflow: hidden;
@@ -36,12 +34,11 @@
   display: block;
 }
 
-/* Right content */
+
 .about-content {
   color: #111827;
 }
 
-/* ABOUT US label */
 .about-label {
   color: #0066ff;
   font-weight: 700;
@@ -51,7 +48,6 @@
   font-size: 0.85rem;
 }
 
-/* Main Heading */
 .about-heading {
   font-size: 2.5rem;
   font-weight: 800;
@@ -60,7 +56,7 @@
   line-height: 1.25;
 }
 
-/* Paragraph Text */
+
 .about-paragraph {
   color: #555;
   font-size: 0.98rem;
@@ -68,7 +64,7 @@
   margin-bottom: 0.9rem;
 }
 
-/* Features Grid */
+
 .about-features-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -90,7 +86,6 @@
   color: #333;
 }
 
-/* Blue arrow icon */
 .about-feature-icon {
   color: #0066ff !important;
   font-size: 1rem;
@@ -102,7 +97,6 @@
   transform: translateX(4px);
 }
 
-/* Read More button */
 .about-readmore-btn {
   background: #0066ff;
   color: white;
@@ -118,8 +112,6 @@
   background: #3355ff;
 }
 
-
-/* ========= ABOUT CENTER (Stats) ========== */
 
 .about-center {
   padding: 4rem 2rem 4rem;
@@ -144,7 +136,6 @@
   margin: 0 auto 2rem auto;
 }
 
-/* Stats boxes row */
 .about-stats.centered {
   display: flex;
   justify-content: center;
@@ -153,7 +144,6 @@
   margin-top: 1rem;
 }
 
-/* Individual stat box */
 .stat {
   flex: 1;
   max-width: 220px;
@@ -176,19 +166,18 @@
   letter-spacing: 0.5px;
 }
 
-/* Stat colors */
 .blue1 { background: #0d47a1; }
 .blue2 { background: #1565c0; }
 .blue3 { background: #1e88e5; }
 .blue4 { background: #42a5f5; }
 
 
-/* ========= RESPONSIVE FIXES ========== */
+
 
 @media (max-width: 900px) {
   .about-hero-inner {
-    grid-template-columns: 1fr; /* stack image + text */
-    padding: 1.5rem; /* reduce spacing */
+    grid-template-columns: 1fr; 
+    padding: 1.5rem;
     gap: 2rem;
   }
 
@@ -236,7 +225,6 @@
   }
 }
 
-/* Animation for showing AboutCenter */
 #about-center-wrapper {
   animation: fadeUp 0.6s ease forwards;
   opacity: 0;
@@ -254,7 +242,6 @@
 }
 
 
-/* ABOUT US with lines */
 .about-label-wrapper {
   display: flex;
   align-items: center;
@@ -270,7 +257,6 @@
   text-transform: uppercase;
 }
 
-/* thin blue lines */
 .about-label-line {
   width: 28px;
   height: 2px;

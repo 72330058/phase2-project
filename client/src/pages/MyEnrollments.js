@@ -21,7 +21,7 @@ const MyEnrollments = () => {
     axios
       .get(`${API}/api/enrollments/${user.id}`)
       .then((res) => {
-        console.log("ENROLLMENTS:", res.data); // ✅ helpful
+        console.log("ENROLLMENTS:", res.data); 
         setEnrollments(res.data);
       })
       .catch((err) => console.error("GET ENROLLMENTS ERROR:", err))
@@ -35,7 +35,6 @@ const MyEnrollments = () => {
     try {
       await axios.delete(`${API}/api/enroll/${enrollmentId}`);
 
-      // ✅ remove from UI correctly
       setEnrollments((prev) =>
         prev.filter((e) => e.enrollment_id !== enrollmentId)
       );
@@ -69,7 +68,6 @@ const MyEnrollments = () => {
 
               return (
                 <div className="enrollment-card" key={course.enrollment_id}>
-                  {/* Image */}
                   <div className="course-image">
                     <img
                       src={imgSrc}
@@ -80,16 +78,12 @@ const MyEnrollments = () => {
                     />
                   </div>
 
-                  {/* Badge */}
                   <span className="course-category">{course.course_type}</span>
 
-                  {/* Title ✅ FIX */}
                   <h3 className="course-title">{course.title}</h3>
 
-                  {/* Meta */}
                   <div className="course-meta">⭐ 4.8 • 12 Lessons • 6h 30m</div>
 
-                  {/* Date */}
                   <span className="enroll-date">
                     Enrolled on{" "}
                     {course.enrolled_at
@@ -97,7 +91,7 @@ const MyEnrollments = () => {
                       : ""}
                   </span>
 
-                  {/* Footer */}
+
                   <div className="card-footer">
                     <span className="course-price">Enrolled</span>
 

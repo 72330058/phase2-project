@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../assets/styles/adminSidebar.css";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-
-// MUI Icons
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
@@ -78,7 +76,6 @@ export default function AdminSidebar() {
           Contact
         </NavLink>
 
-        {/* ✅ NEW: Popular Courses */}
         <NavLink
           to="/admin/popular-courses"
           className={({ isActive }) => `ad-navItem ${isActive ? "active" : ""}`}

@@ -1,4 +1,4 @@
-/* Overlay */
+
 .wm-overlay {
   position: fixed;
   inset: 0;
@@ -10,7 +10,6 @@
   padding: 20px;
 }
 
-/* Modal Box */
 .wm-modal {
   background: #ffffff;
   border-radius: 14px;
@@ -19,11 +18,10 @@
   width: 100%;
   position: relative;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  max-height: 90vh;          /* 🔥 important for mobile */
-  overflow-y: auto;          /* scroll inside if too tall */
+  max-height: 90vh;        
+  overflow-y: auto;          
 }
 
-/* Close Button */
 .wm-close {
   position: absolute;
   right: 18px;
@@ -35,7 +33,6 @@
   cursor: pointer;
 }
 
-/* Titles */
 .wm-title {
   font-size: 1.6rem;
   margin-bottom: 4px;
@@ -49,7 +46,6 @@
   font-size: 0.95rem;
 }
 
-/* Plans */
 .wm-plans {
   display: flex;
   gap: 18px;
@@ -83,7 +79,6 @@
   transform: translateX(-50%);
 }
 
-/* Price */
 .wm-price {
   display: flex;
   align-items: baseline;
@@ -112,14 +107,12 @@
   margin-bottom: 6px;
 }
 
-/* Features */
 .wm-features {
   color: #444;
   margin: 10px 0 16px;
   font-size: 0.9rem;
 }
 
-/* Buttons */
 .wm-btn-primary {
   background: #2563eb;
   color: white;
@@ -139,12 +132,10 @@
   font-weight: 500;
 }
 
-/* Trial Info Modal */
 .wm-info-modal {
   max-width: 480px;
 }
 
-/* Timeline */
 .wm-timeline {
   margin: 20px 0;
 }
@@ -177,7 +168,6 @@
   margin: 4px 0 4px 14px;
 }
 
-/* Dots */
 .wm-dot {
   width: 32px;
   height: 32px;
@@ -196,7 +186,6 @@
   border-color: #2563eb;
 }
 
-/* Transparency Box */
 .wm-transparency {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -206,16 +195,12 @@
   margin-bottom: 16px;
 }
 
-/* Actions */
 .wm-actions {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
 }
 
-/* ========= RESPONSIVE ========= */
-
-/* Tablet & small laptop */
 @media (max-width: 900px) {
   .wm-modal {
     max-width: 100%;
@@ -227,10 +212,9 @@
   }
 }
 
-/* Phones */
 @media (max-width: 600px) {
   .wm-overlay {
-    padding: 10px; /* less padding so modal has more space */
+    padding: 10px; 
   }
 
   .wm-modal {

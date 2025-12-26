@@ -1,32 +1,3 @@
-// import React from "react";
-// import Navbar from "../components/Navbar";
-// import AllCourses from "../components/AllCourses";
-// import Footer from "../components/Footer";
-
-// const Courses = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <main>
-//         <section className="pagee-header">
-//           <div className="container">
-//             <h1>Browse Courses</h1>
-//             <p>
-//               Discover courses across development, data science, design,
-//               business and more.
-//             </p>
-//           </div>
-//         </section>
-
-//         <AllCourses />
-//       </main>
-//       <Footer />
-//     </>
-//   );
-// };
-
-// export default Courses;
-
 
 import React from "react";
 import { useNavigate } from "react-router-dom";

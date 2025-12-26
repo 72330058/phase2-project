@@ -3,14 +3,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../assets/styles/enroll.css";
-
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PaymentIcon from "@mui/icons-material/Payment";
 import LockIcon from "@mui/icons-material/Lock";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import EmailIcon from "@mui/icons-material/Email";
 import SecurityIcon from "@mui/icons-material/Security";
-
 import OfficeHoursModal from "../components/OfficeHoursModal";
 
 const CourseCheckout = () => {

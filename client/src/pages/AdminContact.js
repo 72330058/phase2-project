@@ -8,7 +8,6 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 const API = "http://localhost:5000";
 
-// helper
 const formatDate = (d) => {
   if (!d) return "";
   const dt = new Date(d);
@@ -16,17 +15,15 @@ const formatDate = (d) => {
   return dt.toISOString().slice(0, 10);
 };
 
-// normalize DB values safely
 const normStatus = (s) => {
   const v = String(s || "new").toLowerCase().trim();
-  // accept both styles if old data exists
   if (v === "in progress") return "in_progress";
-  return v; // "new" | "in_progress" | "resolved"
+  return v; 
 };
 
 const normPriority = (p) => {
   const v = String(p || "medium").toLowerCase().trim();
-  return v; // "low" | "medium" | "high"
+  return v; 
 };
 
 export default function AdminContact() {
@@ -73,7 +70,6 @@ export default function AdminContact() {
   useEffect(() => {
     fetchAll();
 
-    // close menu when clicking anywhere
     const onDocClick = () => setOpenMenuId(null);
     document.addEventListener("click", onDocClick);
     return () => document.removeEventListener("click", onDocClick);
@@ -111,7 +107,6 @@ export default function AdminContact() {
 
       await axios.put(`${API}/api/admin/contact/${id}`, payload);
 
-      // update local UI fast
       setRows((prev) =>
         prev.map((r) =>
           r.id === id ? { ...r, status: payload.status, priority: payload.priority } : r
@@ -148,7 +143,6 @@ export default function AdminContact() {
           </div>
         </div>
 
-        {/* ✅ STATS CARDS */}
         <section className="ac-statsGrid">
           <div className="ac-statCard">
             <div className="ac-statTitle">Total Messages</div>
@@ -246,7 +240,6 @@ export default function AdminContact() {
                               })
                             }
                           >
-                            {/* ✅ IMPORTANT: values match backend */}
                             <option value="new">New</option>
                             <option value="in_progress">In Progress</option>
                             <option value="resolved">Resolved</option>

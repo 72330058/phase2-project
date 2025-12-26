@@ -1,4 +1,3 @@
-// src/pages/AdminPopularCourses.js
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import axios from "axios";
 import AdminSidebar from "../components/AdminSidebar";
@@ -27,8 +26,6 @@ export default function AdminPopularCourses() {
   const [order, setOrder] = useState(1);
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
-
-  // actions menu (3 dots)
   const [openMenuId, setOpenMenuId] = useState(null);
   const menuRef = useRef(null);
 
@@ -63,7 +60,6 @@ export default function AdminPopularCourses() {
     loadAll();
   }, []);
 
-  // close menu on outside click / ESC
   useEffect(() => {
     const onDown = (e) => {
       if (!openMenuId) return;
@@ -85,7 +81,6 @@ export default function AdminPopularCourses() {
   const addPopular = async () => {
     if (!courseId) return alert("Select a course first");
 
-    // UI limit
     if (popularCourses.length >= MAX_POPULAR) {
       return alert(`You cannot add more than ${MAX_POPULAR} popular courses`);
     }
@@ -150,7 +145,6 @@ export default function AdminPopularCourses() {
       <AdminSidebar />
 
       <main className="ad-main">
-        {/* Top bar (title/subtitle) */}
         <div className="ap-topbar">
           <div>
             <h1 className="ap-title">Popular Courses</h1>
@@ -163,7 +157,6 @@ export default function AdminPopularCourses() {
           </div>
         </div>
 
-        {/* Stats cards (ONLY ONCE) */}
         <section className="ap-statsGrid">
           <div className="ap-statCard">
             <div className="ap-statTitle">Popular Courses</div>
@@ -181,7 +174,6 @@ export default function AdminPopularCourses() {
           </div>
         </section>
 
-        {/* Add bar BELOW the 3 boxes (right aligned) */}
         <div className="ap-addRow">
           <div className="ap-addBar">
             <select value={courseId} onChange={(e) => setCourseId(e.target.value)}>
@@ -207,7 +199,6 @@ export default function AdminPopularCourses() {
           </div>
         </div>
 
-        {/* Table card */}
         <div className="ap-card">
           <div className="ap-searchRow">
             <div className="ap-searchBox">

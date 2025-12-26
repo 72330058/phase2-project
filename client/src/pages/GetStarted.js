@@ -21,14 +21,12 @@ const GetStarted = () => {
     }
 
     try {
-      // Register
       await axios.post("http://localhost:5000/api/register", {
         name,
         email,
         password,
       });
 
-      // Auto login after register
       const loginRes = await axios.post("http://localhost:5000/api/login", {
         email,
         password,
@@ -36,7 +34,6 @@ const GetStarted = () => {
 
       localStorage.setItem("user", JSON.stringify(loginRes.data.user));
 
-      // ✅ Redirect silently to home
       navigate("/");
     } catch (err) {
       alert(err.response?.data?.message || "Registration failed");

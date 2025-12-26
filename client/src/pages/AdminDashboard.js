@@ -134,8 +134,6 @@ const AdminDashboard = () => {
             sub={`${computed?.paidCount || 0} paid, ${computed?.freeCount || 0} free`}
             icon={<SchoolIcon />}
           />
-
-          {/* ✅ REPLACED CARD */}
           <StatCard
             title="Contact Messages"
             value={stats.totalContacts || 0}

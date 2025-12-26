@@ -76,7 +76,6 @@ export default function AdminFeedback() {
     const onDocClick = () => setOpenMenuId(null);
     document.addEventListener("click", onDocClick);
     return () => document.removeEventListener("click", onDocClick);
-    // eslint-disable-next-line
   }, []);
 
   const filtered = useMemo(() => {
@@ -134,7 +133,6 @@ export default function AdminFeedback() {
           </div>
         </div>
 
-        {/* ✅ STATS (same as screenshot) */}
         <section className="af-statsGrid">
           <div className="af-statCard">
             <div className="af-statTitle">Total Feedback</div>
@@ -160,7 +158,6 @@ export default function AdminFeedback() {
           </div>
         </section>
 
-        {/* (optional) users count line under cards */}
         <div className="af-usersLine">
           Users who left feedback: <b>{stats.usersCount}</b>
         </div>

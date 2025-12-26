@@ -199,7 +199,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
 
 .ad-rowDate{ color:var(--muted); font-size:12px; }
 
-/* TAGS */
 .ad-tag{
   font-size:11px;
   font-weight:900;
@@ -221,7 +220,6 @@ body{ margin:0; font-family:"Segoe UI", system-ui, -apple-system, Arial; backgro
   border-color:#cfe3ff;
 }
 
-/* TRIAL */
 .ad-tag.trial{
   background:#fff7ed;
   color:#c2410c;
