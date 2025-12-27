@@ -4,7 +4,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../assets/styles/myenrollments.css";
 
-const API = "http://localhost:5000";
+const API = "https://phase2-project-i8k8.onrender.com";
+
 
 const MyEnrollments = () => {
   const [enrollments, setEnrollments] = useState([]);

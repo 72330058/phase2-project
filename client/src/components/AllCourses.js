@@ -6,7 +6,7 @@ import TrialPlansModal from "../components/TrialPlansModal";
 import SubscriptionModal from "../components/SubscriptionModal";
 import placeholder from "../assets/images/web.jpg";
 
-const API = "http://localhost:5000";
+const API = "https://phase2-project-i8k8.onrender.com";
 
 const SECTION_META = {
   free: { title: "Free Courses", color: "#00d26a", button: "Enroll Now" },

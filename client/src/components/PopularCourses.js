@@ -3,7 +3,8 @@ import axios from "axios";
 import CourseCard from "./CourseCard";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:5000";
+const API = "https://phase2-project-i8k8.onrender.com";
+
 
 const PopularCourses = () => {
   const navigate = useNavigate();
