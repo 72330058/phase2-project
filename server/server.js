@@ -730,13 +730,17 @@ app.get("/api/admin/popular-courses/stats", (req, res) => {
   });
 });
 
-
-app.get("/db-test", (req, res) => {
-  db.query("SELECT COUNT(*) AS total FROM users", (err, rows) => {
-    if (err) return res.status(500).json({ error: err.message });
+app.get("/db-test", async (req, res) => {
+  try {
+    const [rows] = await db.query(
+      "SELECT COUNT(*) AS total FROM learnhub.users"
+    );
     res.json(rows[0]);
-  });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
+
 
 const PORT = process.env.PORT || 5000;
 
