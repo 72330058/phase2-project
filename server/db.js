@@ -1,18 +1,14 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "learnhub"
-});
-
-db.connect((err) => {
-  if (err) {
-    console.log("Database connection failed");
-  } else {
-    console.log("MySQL connected");
-  }
+const db = mysql.createPool({
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: Number(process.env.MYSQLPORT || 3306),
+  ssl: { rejectUnauthorized: false },
+  waitForConnections: true,
+  connectionLimit: 10,
 });
 
 module.exports = db;

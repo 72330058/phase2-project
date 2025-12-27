@@ -6,14 +6,14 @@ const path = require("path");
 const fs = require("fs");
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 const uploadsDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadsDir)) {
@@ -723,6 +723,14 @@ app.get("/api/admin/popular-courses/stats", (req, res) => {
   db.query(sql, (err, rows) => {
     if (err) return res.status(500).json({ message: "DB error" });
     res.json(rows[0] || { popularCount: 0, allCoursesCount: 0, popularCategoriesCount: 0, maxOrder: 0 });
+  });
+});
+
+
+app.get("/db-test", (req, res) => {
+  db.query("SELECT COUNT(*) AS total FROM users", (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows[0]);
   });
 });
 
