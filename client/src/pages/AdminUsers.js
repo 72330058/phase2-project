@@ -61,11 +61,11 @@ const AdminUsers = () => {
     });
   }, [q, users]);
 
-  const openAdd = () => {
-    setEditingUser(null);
-    setForm({ name: "", email: "", password: "", role: "user" });
-    setModalOpen(true);
-  };
+  // const openAdd = () => {
+  //   setEditingUser(null);
+  //   setForm({ name: "", email: "", password: "", role: "user" });
+  //   setModalOpen(true);
+  // };
 
   const openEdit = (u) => {
     setEditingUser(u);
