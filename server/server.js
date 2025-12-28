@@ -730,6 +730,19 @@ app.get("/api/admin/popular-courses/stats", (req, res) => {
   });
 });
 
+
+
+// ✅ Popular courses
+app.get("/popular-courses", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT * FROM popular_courses");
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 app.get("/db-test", async (req, res) => {
   try {
     const [rows] = await db.query(
@@ -740,6 +753,7 @@ app.get("/db-test", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 
 
 const PORT = process.env.PORT || 5000;
