@@ -6,8 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-const API = "https://phase2-project-i8k8.onrender.com";
-
+const API = "http://localhost:5000";
 
 const formatDate = (d) => {
   if (!d) return "";

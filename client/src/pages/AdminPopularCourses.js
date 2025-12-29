@@ -5,8 +5,7 @@ import "../assets/styles/adminPopularCourses.css";
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-const API = "https://phase2-project-i8k8.onrender.com";
-
+const API = "http://localhost:5000";
 const MAX_POPULAR = 6;
 
 const imgUrl = (thumb) =>

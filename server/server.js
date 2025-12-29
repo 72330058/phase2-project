@@ -6,18 +6,14 @@ const path = require("path");
 const fs = require("fs");
 const app = express();
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.get("/", (req, res) => {
-  res.send("API is running ✅");
-});
-
 
 const uploadsDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadsDir)) {
@@ -730,35 +726,6 @@ app.get("/api/admin/popular-courses/stats", (req, res) => {
   });
 });
 
-
-
-// ✅ Popular courses
-app.get("/popular-courses", async (req, res) => {
-  try {
-    const [rows] = await db.query("SELECT * FROM popular_courses");
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
 });
-
-
-app.get("/db-test", async (req, res) => {
-  try {
-    const [rows] = await db.query(
-      "SELECT COUNT(*) AS total FROM learnhub.users"
-    );
-    res.json(rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
-});
-

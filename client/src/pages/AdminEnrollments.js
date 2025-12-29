@@ -4,8 +4,7 @@ import "../assets/styles/adminTheme.css";
 import "../assets/styles/adminEnrollments.css";
 import AdminSidebar from "../components/AdminSidebar";
 
-const API = "https://phase2-project-i8k8.onrender.com";
-
+const API = "http://localhost:5000";
 
 const AdminEnrollments = () => {
   const [stats, setStats] = useState({ total: 0, freeCount: 0, paidCount: 0 });

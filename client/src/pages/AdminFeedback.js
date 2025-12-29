@@ -8,7 +8,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import PendingOutlinedIcon from "@mui/icons-material/PendingOutlined";
 
-const API = "https://phase2-project-i8k8.onrender.com";
+const API = "http://localhost:5000";
 
 const formatDate = (d) => {
   if (!d) return "";

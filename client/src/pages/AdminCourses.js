@@ -4,8 +4,7 @@ import "../assets/styles/adminCourses.css";
 import placeholder from "../assets/images/web.jpg";
 import AdminSidebar from "../components/AdminSidebar";
 
-const API = "https://phase2-project-i8k8.onrender.com";
-
+const API = "http://localhost:5000";
 
 const emptyCourse = {
   title: "",
